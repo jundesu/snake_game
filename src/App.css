@@ -23,7 +23,7 @@ html, body {
   margin-left: 10px;
 }
 .board {
-  background-color: #DAC9A6;
+  background-color: #f3da6a;
   border: 10px solid #FFB11B;
   height: 45vmin;
   width: 45vmin;
@@ -36,4 +36,11 @@ html, body {
   background-color: #f3da6a;
   height: 3vmin;
   width: 3vmin;
+}
+.food {
+  background-color: #c5284a;
+  border-radius: 50%;
+}
+.snake {
+  background-color: #F596AA;
 }
