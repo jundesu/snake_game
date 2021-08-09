@@ -1,17 +1,39 @@
-* {
-  box-sizing: border-box;
-}
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-color: #FFB11B;
+  background-color:  #F7D94C;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 .scoreBoard {
   color: #ffffff;
   font-size: 6vmin;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 5px;
 }
 .scoreBoard > span {
   margin-left: 10px;
+}
+.board {
+  background-color: #DAC9A6;
+  border: 10px solid #FFB11B;
+  height: 45vmin;
+  width: 45vmin;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+
+}
+.unit {
+  background-color: #f3da6a;
+  height: 3vmin;
+  width: 3vmin;
 }
