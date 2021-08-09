@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+function Game() {
+  const [score,setScore] = useState(0);
+
+  return (
+    <div className="game">
+      <ScoreBoard score={score}/>
+    </div>
+  );
+}
+
+function ScoreBoard(props) {
+  return (
+    <div className="scoreBoard">
+      Score<span>{props.score}</span>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Game />
     </div>
   );
 }
