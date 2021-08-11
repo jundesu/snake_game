@@ -45,6 +45,7 @@ function Game() {
     }
   });
 
+
   return (
     <div className="game">
       <ScoreBoard score={score}/>
@@ -138,6 +139,20 @@ const useListener = (type, callback) => {
   }, [type]);
 }
 
+const controlRandomFood = (snake) => {
+  for(;;) {
+    let x = Math.floor(Math.random() * width);
+    let y = Math.floor(Math.random() * height);
+    const found = snake.find((element) => {
+      if(element[0] === x && element[1] === y) {
+        return true
+      }
+    });
+    if(found === undefined) {
+      return [x,y]
+    }
+  }  
+}
 
 function App() {
   return (
