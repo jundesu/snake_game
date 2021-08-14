@@ -9,14 +9,30 @@ function Game() {
   const [food, setFood] = useState([10,10]);
   const [snake, setSnake] = useState([[7,4], [6,4], [5,4]]);
   const [direction, setDirection] = useState([1,0]);
-  const [delay, setDelay] = useState(500);
+  const [delay, setDelay] = useState(400);
 
   useInterval(() => {
     const head = snake[0];
     const newHead = [head[0] + direction[0], head[1] + direction[1]];
     const newSnake = snake.slice();
-    newSnake.unshift(newHead);
-    newSnake.pop();
+    const eatFood = newHead[0] === food[0] && newHead[1] === food[1];
+    
+    if(isGameOver(newHead, snake)) {
+      setDelay(null);
+      return
+    }
+    if(eatFood) {
+      const nextFood = controlRandomFood(snake);
+      setScore(score + 1);
+      setFood(nextFood);
+      newSnake.unshift(newHead);
+      if(score % 3 === 0) {
+        setDelay(delay - 100);
+      } 
+    } else {
+      newSnake.unshift(newHead);
+      newSnake.pop();
+    }
     setSnake(newSnake);
   }, delay);
 
@@ -45,7 +61,6 @@ function Game() {
     }
   });
 
-
   return (
     <div className="game">
       <ScoreBoard score={score}/>
@@ -72,7 +87,6 @@ function Board(props) {
   
   const isFood = 1;
   const isSnake = 2;
-
   const[foodX, foodY]= props.food;
   columnArr[foodX][foodY] = isFood;
 
@@ -116,9 +130,10 @@ const useInterval = (callback, delay) => {
     const tick = () => {
       savedCallback.current();
     };
-    let id = setInterval(tick, delay);
-    return () => clearInterval(id);
-    
+    if(delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
   },[delay]);
 }
 
@@ -134,8 +149,7 @@ const useListener = (type, callback) => {
       savedCallback.current(e);
     };
     document.addEventListener(type, handle);
-    return () => document.addEventLlistener(type, handle)
-    
+    return () => document.removeEventListener(type, handle)
   }, [type]);
 }
 
@@ -152,6 +166,19 @@ const controlRandomFood = (snake) => {
       return [x,y]
     }
   }  
+}
+
+const isGameOver = (newHead, snake) => {
+  const borderWidth = width - 1;
+  const borderHeight = height -1;
+  const overBorder = newHead[0] > borderWidth || newHead[0] < 0 || newHead[1] > borderHeight || newHead[1] < 0;
+  const touchBody =  snake.find((e) => {
+    if(e[0] === newHead[0] && e[1] === newHead[1]) {
+      return true
+    }
+    return false
+  });
+  return overBorder || touchBody
 }
 
 function App() {
