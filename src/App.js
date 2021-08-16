@@ -3,13 +3,23 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const width = 15;
 const height = 15;
+const startFromHere = [[7,4], [6,4], [5,4]];
 
 function Game() {
   const [score,setScore] = useState(0);
   const [food, setFood] = useState([10,10]);
-  const [snake, setSnake] = useState([[7,4], [6,4], [5,4]]);
+  const [snake, setSnake] = useState(startFromHere);
   const [direction, setDirection] = useState([1,0]);
-  const [delay, setDelay] = useState(400);
+  const [delay, setDelay] = useState(null);
+  const [displayStartButton, setDisplayStartButton] = useState('fullPage');
+
+  const startGame = () => {
+    setDisplayStartButton('hidden');
+    setDelay(300);
+    setSnake(startFromHere);
+    setScore(0);
+    setDirection([1,0]);
+  };
 
   useInterval(() => {
     const head = snake[0];
@@ -19,6 +29,7 @@ function Game() {
     
     if(isGameOver(newHead, snake)) {
       setDelay(null);
+      setDisplayStartButton('fullPage');
       return
     }
     if(eatFood) {
@@ -27,7 +38,7 @@ function Game() {
       setFood(nextFood);
       newSnake.unshift(newHead);
       if(score % 3 === 0) {
-        setDelay(delay - 100);
+        setDelay(delay - 50);
       } 
     } else {
       newSnake.unshift(newHead);
@@ -65,6 +76,7 @@ function Game() {
     <div className="game">
       <ScoreBoard score={score}/>
       <Board snake={snake} food={food} />
+      <StartButton startGame={startGame} displayStartButton={displayStartButton} />
     </div>
   );
 }
@@ -115,6 +127,14 @@ function Board(props) {
         );
        })
      }
+    </div>
+  );
+}
+
+function StartButton(props) {
+  return (
+    <div className={props.displayStartButton}>
+      <button className="startButton" onClick={props.startGame}>start</button>
     </div>
   );
 }

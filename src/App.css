@@ -11,6 +11,7 @@ html, body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  position: relative;
 }
 .scoreBoard {
   color: #ffffff;
@@ -38,9 +39,38 @@ html, body {
   width: 3vmin;
 }
 .food {
-  background-color: #c5284a;
+  background-color: #F05E1C;
   border-radius: 50%;
 }
 .snake {
   background-color: #F596AA;
+}
+.fullPage {
+  height: 100%;
+  width: 100%;
+  background-color: #00000059;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.startButton {
+  box-sizing: border-box;
+  background-color: rgb(243, 145, 109);
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 3px solid white;
+  letter-spacing: 7px;
+  cursor: pointer;
+  width: 30vmin;
+  height: 10vmin;
+  font-size: 3vmin;
+}
+.startButton:hover {
+  border: 5px dotted white;
+}
+.hidden {
+  display: none;
 }
