@@ -41,6 +41,18 @@ html, body {
 .food {
   background-color: #F05E1C;
   border-radius: 50%;
+  position: relative;
+}
+.food::after {
+  content: '';
+  background-color: #f05f1c;
+  height: 4vmin;
+  width: 4vmin;
+  border-radius: 50%;
+  position: absolute;
+  left: -4px;
+  top: -4px;  
+  animation: shine 1s linear infinite;
 }
 .snake {
   background-color: #F596AA;
@@ -73,4 +85,9 @@ html, body {
 }
 .hidden {
   display: none;
+}
+@keyframes shine {
+  0% {opacity: 0;}
+  25% {opacity: 0.4;}
+  100% {opacity: 0;}
 }
