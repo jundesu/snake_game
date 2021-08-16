@@ -55,7 +55,46 @@ html, body {
   animation: shine 1s linear infinite;
 }
 .snake {
-  background-color: #F596AA;
+  background-color: #90B44B;
+  border-radius: 50%;
+
+}
+.snakeHead {
+  background-color: #90B44B;
+  border-radius: 50%;
+  position: relative;
+}
+.snakeHead::before {
+  content: '';
+  background-color: #000000;
+  height: 0.8vmin;
+  width: 0.8vmin;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  top: 3px;  
+}
+.snakeHead::after {
+  content: '';
+  background-color: #000000;
+  height: 0.8vmin;
+  width: 0.8vmin;
+  border-radius: 50%;
+  position: absolute;
+  right: 8px;
+  bottom: 3px;  
+}
+.turnRight {
+  transform:rotate(0deg);
+}
+.turnLeft {
+  transform:rotate(180deg);
+}
+.up {
+  transform:rotate(270deg);
+}
+.down {
+  transform:rotate(90deg);
 }
 .fullPage {
   height: 100%;

@@ -12,6 +12,7 @@ function Game() {
   const [direction, setDirection] = useState([1,0]);
   const [delay, setDelay] = useState(null);
   const [displayStartButton, setDisplayStartButton] = useState('fullPage');
+  const [headDirectionClass, setHeadDirectionClass] = useState('turnRight');
 
   const startGame = () => {
     setDisplayStartButton('hidden');
@@ -19,6 +20,7 @@ function Game() {
     setSnake(startFromHere);
     setScore(0);
     setDirection([1,0]);
+    setHeadDirectionClass('turnRight');
   };
 
   useInterval(() => {
@@ -52,21 +54,25 @@ function Game() {
       case 'ArrowUp':
         if(direction[0] !== 0) {
           setDirection([0, -1]);
+          setHeadDirectionClass('up');
         }
         break;
       case 'ArrowDown':
         if(direction[0] !== 0) {
           setDirection([0, 1]);
+          setHeadDirectionClass('down');
         }
         break;
       case 'ArrowLeft':
         if(direction[1] !== 0) {
           setDirection([-1, 0]);
+          setHeadDirectionClass('turnLeft');
         }
         break;
       case 'ArrowRight':
         if(direction[1] !== 0) {
           setDirection([1, 0]);
+          setHeadDirectionClass('turnRight');
         }
         break;
     }
@@ -75,7 +81,7 @@ function Game() {
   return (
     <div className="game">
       <ScoreBoard score={score}/>
-      <Board snake={snake} food={food} />
+      <Board snake={snake} food={food} headDirectionClass={headDirectionClass} />
       <StartButton startGame={startGame} displayStartButton={displayStartButton} />
     </div>
   );
@@ -99,12 +105,17 @@ function Board(props) {
   
   const isFood = 1;
   const isSnake = 2;
+  const isSnakeHead = 3;
   const[foodX, foodY]= props.food;
   columnArr[foodX][foodY] = isFood;
 
-  props.snake.forEach(snakeArr => {
+  props.snake.forEach((snakeArr, index) => {
     const [snakeX,snakeY] = snakeArr;
-    columnArr[snakeX][snakeY] = isSnake;
+    if(index === 0) {
+      columnArr[snakeX][snakeY] = isSnakeHead;
+    } else {
+      columnArr[snakeX][snakeY] = isSnake;
+    }
   });
  
   return (
@@ -118,10 +129,13 @@ function Board(props) {
               return (<div key={k} className="unit food"></div>)
             }
             if(cell === isSnake) {
-                return (<div key={k} className="unit snake"></div>)
+              return (<div key={k} className="unit snake"></div>)
+            }
+            if(cell === isSnakeHead) {
+              return (<div key={k} className={`unit snakeHead ${props.headDirectionClass}`}></div>)
             }
             return (
-            <div key={k} className="unit"></div>
+              <div key={k} className="unit"></div>
             );
           })
         );
