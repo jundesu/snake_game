@@ -1,9 +1,10 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background-color:  #F7D94C;
+  background-color: #f7d94c;
 }
 .game {
   display: flex;
@@ -25,13 +26,12 @@ html, body {
 }
 .board {
   background-color: #f3da6a;
-  border: 10px solid #FFB11B;
+  border: 10px solid #ffb11b;
   height: 45vmin;
   width: 45vmin;
   display: flex;
   flex-direction: column;
-  flex-wrap:wrap;
-
+  flex-wrap: wrap;
 }
 .unit {
   background-color: #f3da6a;
@@ -39,7 +39,7 @@ html, body {
   width: 3vmin;
 }
 .food {
-  background-color: #F05E1C;
+  background-color: #f05e1c;
   border-radius: 50%;
   position: relative;
 }
@@ -51,16 +51,15 @@ html, body {
   border-radius: 50%;
   position: absolute;
   left: -0.5vmin;
-  top: -0.5vmin;  
+  top: -0.5vmin;
   animation: shine 1s linear infinite;
 }
 .snake {
-  background-color: #90B44B;
+  background-color: #90b44b;
   border-radius: 50%;
-
 }
 .snakeHead {
-  background-color: #90B44B;
+  background-color: #90b44b;
   border-radius: 50%;
   position: relative;
 }
@@ -72,7 +71,7 @@ html, body {
   border-radius: 50%;
   position: absolute;
   right: 1vmin;
-  top: 0.5vmin;  
+  top: 0.5vmin;
 }
 .snakeHead::after {
   content: '';
@@ -82,19 +81,19 @@ html, body {
   border-radius: 50%;
   position: absolute;
   right: 1vmin;
-  bottom: 0.5vmin;  
+  bottom: 0.5vmin;
 }
 .turnRight {
-  transform:rotate(0deg);
+  transform: rotate(0deg);
 }
 .turnLeft {
-  transform:rotate(180deg);
+  transform: rotate(180deg);
 }
 .up {
-  transform:rotate(270deg);
+  transform: rotate(270deg);
 }
 .down {
-  transform:rotate(90deg);
+  transform: rotate(90deg);
 }
 .fullPage {
   height: 100%;
@@ -126,7 +125,13 @@ html, body {
   display: none;
 }
 @keyframes shine {
-  0% {opacity: 0;}
-  25% {opacity: 0.4;}
-  100% {opacity: 0;}
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
 }
