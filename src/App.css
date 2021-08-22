@@ -50,8 +50,8 @@ html, body {
   width: 4vmin;
   border-radius: 50%;
   position: absolute;
-  left: -4px;
-  top: -4px;  
+  left: -0.5vmin;
+  top: -0.5vmin;  
   animation: shine 1s linear infinite;
 }
 .snake {
@@ -67,22 +67,22 @@ html, body {
 .snakeHead::before {
   content: '';
   background-color: #000000;
-  height: 0.8vmin;
-  width: 0.8vmin;
+  height: 0.6vmin;
+  width: 0.6vmin;
   border-radius: 50%;
   position: absolute;
-  right: 8px;
-  top: 3px;  
+  right: 1vmin;
+  top: 0.5vmin;  
 }
 .snakeHead::after {
   content: '';
   background-color: #000000;
-  height: 0.8vmin;
-  width: 0.8vmin;
+  height: 0.6vmin;
+  width: 0.6vmin;
   border-radius: 50%;
   position: absolute;
-  right: 8px;
-  bottom: 3px;  
+  right: 1vmin;
+  bottom: 0.5vmin;  
 }
 .turnRight {
   transform:rotate(0deg);
