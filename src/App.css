@@ -135,3 +135,41 @@ body {
     opacity: 0;
   }
 }
+.forkmeongihub {
+  width: 40vmin;
+  height: 40vmin;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+}
+.forkmeongihub div {
+  width: 60vmin;
+  height: 8vmin;
+  white-space:nowrap;
+  position: absolute;
+  right: -15vmin;
+  top: 11vmin;
+  transform: rotate(45deg);
+  background-image: linear-gradient(to right, #e75703, #FFBA84, #e75703);
+  background-size: 200%;
+  background-position: right;
+  transition-property: background-position;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  line-height: 8vmin;
+}
+.forkmeongihub div:hover {
+  background-position: left;
+}
+.forkmeongihub a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 3vmin;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+

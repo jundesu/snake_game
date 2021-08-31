@@ -233,7 +233,12 @@ const isGameOver = (newHead, snake) => {
 
 function App() {
   return (
-    <div className="app">
+    <div>
+      <div className="forkmeongihub">
+        <div>
+          <a href="https://github.com/jundesu/snake_game">Fork me on Github</a>
+        </div> 
+      </div>
       <Game />
     </div>
   );
