@@ -54,7 +54,11 @@ function Game() {
   }, delay);
 
   useListener('keydown', (e) => {
-    switch (e.code) {
+    handleDirectionBtn(e.code);
+  });
+
+  const handleDirectionBtn = (e) => {
+    switch (e) {
       case 'ArrowUp':
         if (direction[0] !== 0) {
           setDirection([0, -1]);
@@ -80,7 +84,7 @@ function Game() {
         }
         break;
     }
-  });
+  };
 
   return (
     <div className="game">
@@ -94,6 +98,7 @@ function Game() {
         startGame={startGame}
         displayStartButton={displayStartButton}
       />
+      <DirectionButton handleDirectionBtn={handleDirectionBtn}/>
     </div>
   );
 }
@@ -161,6 +166,19 @@ function StartButton(props) {
       <button className="startButton" onClick={props.startGame}>
         start
       </button>
+    </div>
+  );
+}
+
+function DirectionButton(props) {
+  return (
+    <div className="directionBtn">
+      <button  onClick= {()=> props.handleDirectionBtn('ArrowUp')} className="bnstyle ArrowUp"></button>
+      <div className="leftRight">
+        <button onClick={() => props.handleDirectionBtn('ArrowLeft')} className="bnstyle ArrowLeft"></button>
+        <button onClick={() => props.handleDirectionBtn('ArrowRight')} className="bnstyle ArrowRight"></button>
+      </div>
+      <button onClick={() => props.handleDirectionBtn('ArrowDown')} className="bnstyle ArrowDown"></button>
     </div>
   );
 }

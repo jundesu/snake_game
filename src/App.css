@@ -27,6 +27,7 @@ body {
 .board {
   background-color: #f3da6a;
   border: 10px solid #ffb11b;
+  border-radius: 10px;
   height: 45vmin;
   width: 45vmin;
   display: flex;
@@ -98,6 +99,7 @@ body {
 .fullPage {
   height: 100%;
   width: 100%;
+  /* background-color: rgba(255, 255, 255, 0.247); */
   background-color: #00000059;
   display: flex;
   justify-content: center;
@@ -108,15 +110,17 @@ body {
 }
 .startButton {
   box-sizing: border-box;
-  background-color: rgb(243, 145, 109);
+  background-color: #f89f5b;
   color: #ffffff;
   text-transform: uppercase;
-  border: 3px solid white;
+  border: 2px solid white;
+  border-radius: 10px;
   letter-spacing: 7px;
   cursor: pointer;
-  width: 30vmin;
-  height: 10vmin;
+  width: 40vmin;
+  height: 15vmin;
   font-size: 3vmin;
+  font-weight: 600;
 }
 .startButton:hover {
   border: 5px dotted white;
@@ -172,4 +176,61 @@ body {
   letter-spacing: 2px;
   font-weight: 600;
 }
-
+.directionBtn {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 35vmin;
+  height: 35vmin;
+  margin: 20px;
+}
+.bnstyle {
+  border: none;
+  background-color: #c2c2c267;
+  width: 12vmin;
+  height: 12vmin;
+  border-radius: 50%;
+  position: relative;
+}
+.leftRight {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.ArrowUp::after {
+  content: '';
+  position: absolute;
+  left: 4vmin;
+  bottom: 4vmin;
+  border-style: solid;
+  border-width: 2vmin 2vmin 4vmin 2vmin ;
+  border-color: transparent transparent rgb(255, 255, 255) transparent;
+}
+.ArrowDown::after {
+  content: '';
+  position: absolute;
+  left: 4vmin;
+  top: 4vmin;
+  border-style: solid;
+  border-width: 4vmin 2vmin 2vmin 2vmin ;
+  border-color: rgb(255, 255, 255) transparent transparent transparent;
+}
+.ArrowLeft::after {
+  content: '';
+  position: absolute;
+  right: 5vmin;
+  top: 4vmin;
+  border-style: solid;
+  border-width: 2vmin 4vmin 2vmin 2vmin ;
+  border-color: transparent rgb(255, 255, 255) transparent transparent;
+}
+.ArrowRight::after {
+  content: '';
+  position: absolute;
+  left: 5vmin;
+  top: 4vmin;
+  border-style: solid;
+  border-width: 2vmin 2vmin 2vmin 4vmin ;
+  border-color: transparent transparent transparent rgb(255, 255, 255);
+}
