@@ -8,9 +8,8 @@ body {
 }
 .game {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   position: relative;
 }
@@ -152,12 +151,12 @@ body {
 .forkmeongihub div {
   width: 60vmin;
   height: 8vmin;
-  white-space:nowrap;
+  white-space: nowrap;
   position: absolute;
   right: -15vmin;
   top: 11vmin;
   transform: rotate(45deg);
-  background-image: linear-gradient(to right, #e75703, #FFBA84, #e75703);
+  background-image: linear-gradient(to right, #e75703, #ffba84, #e75703);
   background-size: 200%;
   background-position: right;
   transition-property: background-position;
@@ -177,13 +176,13 @@ body {
   font-weight: 600;
 }
 .directionBtn {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 35vmin;
   height: 35vmin;
-  margin: 20px;
+  margin: 60px 0px 0px 40px;
 }
 .bnstyle {
   border: none;
@@ -204,7 +203,7 @@ body {
   left: 4vmin;
   bottom: 4vmin;
   border-style: solid;
-  border-width: 2vmin 2vmin 4vmin 2vmin ;
+  border-width: 2vmin 2vmin 4vmin 2vmin;
   border-color: transparent transparent rgb(255, 255, 255) transparent;
 }
 .ArrowDown::after {
@@ -213,7 +212,7 @@ body {
   left: 4vmin;
   top: 4vmin;
   border-style: solid;
-  border-width: 4vmin 2vmin 2vmin 2vmin ;
+  border-width: 4vmin 2vmin 2vmin 2vmin;
   border-color: rgb(255, 255, 255) transparent transparent transparent;
 }
 .ArrowLeft::after {
@@ -222,7 +221,7 @@ body {
   right: 5vmin;
   top: 4vmin;
   border-style: solid;
-  border-width: 2vmin 4vmin 2vmin 2vmin ;
+  border-width: 2vmin 4vmin 2vmin 2vmin;
   border-color: transparent rgb(255, 255, 255) transparent transparent;
 }
 .ArrowRight::after {
@@ -231,6 +230,15 @@ body {
   left: 5vmin;
   top: 4vmin;
   border-style: solid;
-  border-width: 2vmin 2vmin 2vmin 4vmin ;
+  border-width: 2vmin 2vmin 2vmin 4vmin;
   border-color: transparent transparent transparent rgb(255, 255, 255);
+}
+@media (max-width: 700px) {
+  .game {
+    display: flex;
+    flex-direction: column;
+  }
+  .directionBtn {
+    margin: 40px 0px 0px 0px;
+  }
 }

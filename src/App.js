@@ -88,17 +88,19 @@ function Game() {
 
   return (
     <div className="game">
-      <ScoreBoard score={score} />
-      <Board
-        snake={snake}
-        food={food}
-        headDirectionClass={headDirectionClass}
-      />
+      <div>
+        <ScoreBoard score={score} />
+        <Board
+          snake={snake}
+          food={food}
+          headDirectionClass={headDirectionClass}
+        />
+      </div>
+      <DirectionButton handleDirectionBtn={handleDirectionBtn} />
       <StartButton
         startGame={startGame}
         displayStartButton={displayStartButton}
       />
-      <DirectionButton handleDirectionBtn={handleDirectionBtn}/>
     </div>
   );
 }
@@ -173,12 +175,24 @@ function StartButton(props) {
 function DirectionButton(props) {
   return (
     <div className="directionBtn">
-      <button  onClick= {()=> props.handleDirectionBtn('ArrowUp')} className="bnstyle ArrowUp"></button>
+      <button
+        onClick={() => props.handleDirectionBtn('ArrowUp')}
+        className="bnstyle ArrowUp"
+      ></button>
       <div className="leftRight">
-        <button onClick={() => props.handleDirectionBtn('ArrowLeft')} className="bnstyle ArrowLeft"></button>
-        <button onClick={() => props.handleDirectionBtn('ArrowRight')} className="bnstyle ArrowRight"></button>
+        <button
+          onClick={() => props.handleDirectionBtn('ArrowLeft')}
+          className="bnstyle ArrowLeft"
+        ></button>
+        <button
+          onClick={() => props.handleDirectionBtn('ArrowRight')}
+          className="bnstyle ArrowRight"
+        ></button>
       </div>
-      <button onClick={() => props.handleDirectionBtn('ArrowDown')} className="bnstyle ArrowDown"></button>
+      <button
+        onClick={() => props.handleDirectionBtn('ArrowDown')}
+        className="bnstyle ArrowDown"
+      ></button>
     </div>
   );
 }
@@ -255,7 +269,7 @@ function App() {
       <div className="forkmeongihub">
         <div>
           <a href="https://github.com/jundesu/snake_game">Fork me on Github</a>
-        </div> 
+        </div>
       </div>
       <Game />
     </div>
