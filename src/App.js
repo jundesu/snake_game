@@ -22,6 +22,7 @@ function Game() {
     setDisplayStartButton('hidden');
     setDelay(300);
     setSnake(startFromHere);
+    setFood([10, 10]);
     setScore(0);
     setDirection([1, 0]);
     setHeadDirectionClass('turnRight');
@@ -44,7 +45,7 @@ function Game() {
       setFood(nextFood);
       newSnake.unshift(newHead);
       if (score % 3 === 0) {
-        setDelay(delay - 50);
+        setDelay(delay - 20);
       }
     } else {
       newSnake.unshift(newHead);
