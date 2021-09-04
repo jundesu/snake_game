@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 html,
 body {
   margin: 0;
@@ -6,29 +9,38 @@ body {
   width: 100vw;
   background-color: #f7d94c;
 }
+.app {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 .game {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
+  flex-wrap: wrap; 
   height: 100vh;
-  position: relative;
+  padding: 30px;
 }
 .scoreBoard {
   color: #ffffff;
   font-size: 6vmin;
   font-weight: 600;
-  margin-bottom: 20px;
   letter-spacing: 5px;
+  margin-bottom: 20px;
 }
 .scoreBoard > span {
   margin-left: 10px;
 }
 .board {
   background-color: #f3da6a;
-  border: 10px solid #ffb11b;
+  border: 2vmin solid #ffb11b;
   border-radius: 10px;
-  height: 45vmin;
-  width: 45vmin;
+  height: 49vmin;
+  width: 49vmin;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -98,7 +110,6 @@ body {
 .fullPage {
   height: 100%;
   width: 100%;
-  /* background-color: rgba(255, 255, 255, 0.247); */
   background-color: #00000059;
   display: flex;
   justify-content: center;
@@ -138,20 +149,14 @@ body {
     opacity: 0;
   }
 }
-.forkmeongihub {
-  width: 40vmin;
-  height: 40vmin;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  z-index: 1;
-  overflow: hidden;
-  text-align: center;
-}
-.forkmeongihub div {
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 3vmin;
+  letter-spacing: 2px;
+  font-weight: 600;
   width: 60vmin;
   height: 8vmin;
-  white-space: nowrap;
   position: absolute;
   right: -15vmin;
   top: 11vmin;
@@ -164,16 +169,11 @@ body {
   transition-timing-function: ease;
   transition-delay: 0s;
   line-height: 8vmin;
+  text-align: center;
+  z-index: 1;
 }
-.forkmeongihub div:hover {
+a:hover {
   background-position: left;
-}
-.forkmeongihub a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 3vmin;
-  letter-spacing: 2px;
-  font-weight: 600;
 }
 .directionBtn {
   display: flex;
@@ -182,9 +182,9 @@ body {
   justify-content: space-between;
   width: 35vmin;
   height: 35vmin;
-  margin: 60px 0px 0px 40px;
+  margin: 40px 40px 0 40px;
 }
-.bnstyle {
+.btnStyle {
   border: none;
   background-color: #c2c2c267;
   width: 12vmin;
@@ -197,7 +197,7 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.ArrowUp::after {
+.arrowUp::after {
   content: '';
   position: absolute;
   left: 4vmin;
@@ -206,7 +206,7 @@ body {
   border-width: 2vmin 2vmin 4vmin 2vmin;
   border-color: transparent transparent rgb(255, 255, 255) transparent;
 }
-.ArrowDown::after {
+.arrowDown::after {
   content: '';
   position: absolute;
   left: 4vmin;
@@ -215,7 +215,7 @@ body {
   border-width: 4vmin 2vmin 2vmin 2vmin;
   border-color: rgb(255, 255, 255) transparent transparent transparent;
 }
-.ArrowLeft::after {
+.arrowLeft::after {
   content: '';
   position: absolute;
   right: 5vmin;
@@ -224,7 +224,7 @@ body {
   border-width: 2vmin 4vmin 2vmin 2vmin;
   border-color: transparent rgb(255, 255, 255) transparent transparent;
 }
-.ArrowRight::after {
+.arrowRight::after {
   content: '';
   position: absolute;
   left: 5vmin;
@@ -233,12 +233,6 @@ body {
   border-width: 2vmin 2vmin 2vmin 4vmin;
   border-color: transparent transparent transparent rgb(255, 255, 255);
 }
-@media (max-width: 700px) {
-  .game {
-    display: flex;
-    flex-direction: column;
-  }
-  .directionBtn {
-    margin: 40px 0px 0px 0px;
-  }
-}
+/* @media (max-width: 700px) {
+
+} */
