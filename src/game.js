@@ -3,7 +3,7 @@ import ScoreBoard from './scoreBoard';
 import Board from './board';
 import StartButton from './startButton';
 import DirectionButton from './directionButton';
-import { useInterval, useListener }from './customHook';
+import { useInterval, useListener } from './customHook';
 
 const width = 15;
 const height = 15;
@@ -93,14 +93,14 @@ function Game() {
 
   return (
     <div className="game">
-        <ScoreBoard score={score} />
-        <Board
-          width={width}
-          height={height}
-          snake={snake}
-          food={food}
-          headDirectionClass={headDirectionClass}
-        />
+      <ScoreBoard score={score} />
+      <Board
+        width={width}
+        height={height}
+        snake={snake}
+        food={food}
+        headDirectionClass={headDirectionClass}
+      />
       <DirectionButton handleDirectionBtn={handleDirectionBtn} />
       <StartButton
         startGame={startGame}

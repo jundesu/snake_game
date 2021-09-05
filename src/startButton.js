@@ -1,9 +1,9 @@
 import React from 'react';
 
-function StartButton(props) {
+function StartButton({ displayStartButton, startGame }) {
   return (
-    <div className={props.displayStartButton}>
-      <button type="button" className="startButton" onClick={props.startGame}>
+    <div className={displayStartButton}>
+      <button type="button" className="startButton" onClick={startGame}>
         start
       </button>
     </div>

@@ -1,19 +1,19 @@
 import React from 'react';
 
-function Board(props) {
-  const columnArr = new Array(props.width).fill(null);
+function Board({ width, height, snake, food, headDirectionClass }) {
+  const columnArr = new Array(width).fill(null);
   for (let i = 0; i < columnArr.length; i++) {
-    const rowArr = new Array(props.height).fill(null);
+    const rowArr = new Array(height).fill(null);
     columnArr[i] = rowArr;
   }
 
   const isFood = 1;
   const isSnake = 2;
   const isSnakeHead = 3;
-  const [foodX, foodY] = props.food;
+  const [foodX, foodY] = food;
   columnArr[foodX][foodY] = isFood;
 
-  props.snake.forEach((snakeArr, index) => {
+  snake.forEach((snakeArr, index) => {
     const [snakeX, snakeY] = snakeArr;
     if (index === 0) {
       columnArr[snakeX][snakeY] = isSnakeHead;
@@ -37,7 +37,7 @@ function Board(props) {
             return (
               <div
                 key={k}
-                className={`unit snakeHead ${props.headDirectionClass}`}
+                className={`unit snakeHead ${headDirectionClass}`}
               ></div>
             );
           }

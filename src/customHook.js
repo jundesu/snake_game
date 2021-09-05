@@ -34,4 +34,4 @@ const useListener = (type, callback) => {
   }, [type]);
 };
 
-export {useInterval, useListener};
+export { useInterval, useListener };

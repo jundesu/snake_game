@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ScoreBoard(props) {
+function ScoreBoard({ score }) {
   return (
     <div className="scoreBoard">
       Score
-      <span>{props.score}</span>
+      <span>{score}</span>
     </div>
   );
 }

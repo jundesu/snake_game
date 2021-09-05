@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 html,
@@ -21,7 +23,7 @@ body {
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   height: 100vh;
   padding: 30px;
 }
@@ -233,6 +235,4 @@ a:hover {
   border-width: 2vmin 2vmin 2vmin 4vmin;
   border-color: transparent transparent transparent rgb(255, 255, 255);
 }
-/* @media (max-width: 700px) {
 
-} */
