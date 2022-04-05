@@ -1,11 +1,9 @@
 import './App.css';
-import React from 'react';
-import Game from './game';
+import Game from './components/Game';
 
 function App() {
   return (
-    <div className="app">
-      <a href="https://github.com/jundesu/snake_game">Fork me on Github</a>
+    <div className="App">
       <Game />
     </div>
   );

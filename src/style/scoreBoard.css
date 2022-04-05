@@ -1,0 +1,11 @@
+.scoreBoard {
+  font-size: 5vmin;
+  font-weight: 600;
+  color: #FAEBE0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 20px;
+}
+span {
+  margin-left: 20px;
+}
