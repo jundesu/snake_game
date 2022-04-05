@@ -1,0 +1,65 @@
+.board {  
+  width: 47vmin;
+  height: 47vmin;
+  border: 1vmin solid #7272ac;
+  display: flex;
+  flex-direction: column;
+}
+.xaxis {
+  width: 100%;
+  display: flex;
+}
+.unit {
+  width: 3vmin;
+  height: 3vmin;
+  border-radius: 50%;  
+}
+.snake {
+  background-color: #B8DFD8;  
+}
+.food {
+  background-color: #FFC074;
+  position: relative;
+}
+.food::after {
+  content:'';
+  width: 4vmin;
+  height: 4vmin;
+  background-color: #faf74c93;
+  border-radius: 50%;  
+  position: absolute;
+  top: -0.5vmin;
+  left: -0.5vmin;
+  animation: shine 1s linear infinite;
+}
+@keyframes shine {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.shakingSnake{
+  animation: shake;
+  animation-duration: 0.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.paused {
+  animation-play-state: paused;
+}
+.running {
+  animation-play-state: running;
+}
+@keyframes shake{
+  0% { transform: translate(0px, 0px); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(2px, 0px); }
+  80% { transform: translate(-1px, -2px); }
+  100% { transform: translate(0px, 0px); } 
+}

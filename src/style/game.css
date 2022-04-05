@@ -1,0 +1,11 @@
+.game{
+ width: 100%;
+ height: 100%;
+ background-color: #4C4C6D;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+ flex-wrap: wrap;
+}
